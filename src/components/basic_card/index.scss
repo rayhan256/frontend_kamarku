@@ -1,0 +1,12 @@
+.card {
+  border: none;
+  margin: 1em 0;
+  .card-body {
+    padding: 1em 0;
+
+    .article-link {
+      font-size: 15px;
+      text-decoration: none !important;
+    }
+  }
+}

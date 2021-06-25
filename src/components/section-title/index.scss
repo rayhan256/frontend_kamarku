@@ -1,0 +1,17 @@
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .main-title-href {
+    color: #f29913;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .main-title {
+    color: #f29913;
+    font-size: 30px;
+    .title-span {
+      color: #493838 !important;
+    }
+  }
+}
