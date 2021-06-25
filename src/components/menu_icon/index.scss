@@ -1,0 +1,26 @@
+.icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+  align-items: center;
+  .icon-img {
+    max-width: 107px;
+    max-height: 94px;
+    min-height: 94px;
+  }
+
+  .icon-desc {
+    display: flex;
+    flex-direction: column;
+    margin: 28px 0 0 10px;
+
+    .title {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .desc {
+      padding: 0;
+    }
+  }
+}

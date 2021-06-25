@@ -1,0 +1,29 @@
+.img-city-wrapper {
+  height: 250px;
+  width: 260px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  position: relative;
+
+  .img-city {
+    position: absolute;
+    border-radius: 15px;
+    height: 250px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    filter: brightness(50%);
+    z-index: 1;
+  }
+
+  .city-title {
+    color: white;
+    position: absolute;
+    margin: 10px 5px;
+    font-weight: bold;
+    z-index: 2;
+    left: 25px;
+    top: 9em;
+  }
+}
