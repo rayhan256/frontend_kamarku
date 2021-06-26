@@ -5,7 +5,7 @@ export default function BasicCard({ image, name, summary, link }) {
   return (
     <div>
       <div className="card">
-        <img src={image} alt={name} className="card-img-top" />
+        <img src={image} alt={name} className="card-img-top rounded" />
         <div className="card-body">
           <div className="card-title">{name}</div>
           <p className="card-text">{summary}</p>

@@ -5,23 +5,22 @@ import jakarta from "assets/images/jakarta.jpg";
 import SectionTitle from "components/section-title";
 import Slider from "react-slick";
 function RecommendedCities() {
-  const curWidth = window.screen.availWidth;
-  let setting = {
+  const setting = {
     dots: true,
     speed: 500,
     slidesToShow: 4,
+    autoplay: true,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerPadding: "200px",
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
-
-  if (curWidth < 1366) {
-    setting = {
-      dots: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    };
-  }
-
   return (
     <>
       <div className="container mb-5">
