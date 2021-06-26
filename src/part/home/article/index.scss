@@ -1,3 +1,26 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
 .search-article-wrapper {
   .form-group-wrapper {
     display: flex;
@@ -7,6 +30,9 @@
     flex-direction: row;
     height: 50px;
     width: 60%;
+    @include breakpoint("mobileonly") {
+      width: 100%;
+    }
 
     .k-button-primary {
       color: white;

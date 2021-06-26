@@ -1,3 +1,27 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
+
 .container {
   .k-jumbotron {
     width: 100%;
@@ -27,20 +51,36 @@
       z-index: 2;
       height: 100%;
 
+      @include breakpoint("mobileonly") {
+        top: 10px;
+      }
+
       .title {
         font-size: 50px;
         font-weight: bold;
         color: #fafafa;
+
+        @include breakpoint("mobileonly") {
+          font-size: 30px;
+        }
       }
 
       .desc {
         color: #fafafa;
         font-size: 30px;
+
+        @include breakpoint("mobileonly") {
+          font-size: 23px;
+        }
       }
 
       .k-button-primary {
         width: 25%;
         color: white;
+
+        @include breakpoint("mobileonly") {
+          width: 50%;
+        }
       }
     }
   }

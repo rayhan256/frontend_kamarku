@@ -1,16 +1,43 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
+
 .img-city-wrapper {
+  position: relative;
   height: 250px;
   width: 260px;
   border-radius: 15px;
   margin-bottom: 10px;
-  position: relative;
-
+  @include breakpoint("mobileonly") {
+    width: 100%;
+  }
   .img-city {
     position: absolute;
     border-radius: 15px;
     height: 250px;
     width: 100%;
     left: 0;
+    right: 0;
     top: 0;
     object-fit: cover;
     filter: brightness(50%);
