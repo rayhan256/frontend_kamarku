@@ -1,0 +1,33 @@
+.footer {
+  margin-top: 100px;
+  .footer-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .footer-item {
+      .footer-title {
+        color: #311d00;
+        text-align: center;
+      }
+
+      .footer-text-title {
+        font-size: 15px;
+        margin-top: 1em;
+      }
+
+      .footer-text {
+        color: #f29913;
+      }
+
+      ul {
+        text-decoration: none;
+        list-style: none;
+        .li-text {
+          text-align: start !important;
+        }
+      }
+    }
+  }
+}

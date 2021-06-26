@@ -5,7 +5,7 @@ import Header from "part/home/header/Header";
 import RecommendedCities from "part/home/recomended_city";
 import Jumbotron from "part/home/jumbotron";
 import Article from "part/home/article";
-
+import Footer from "components/footer";
 
 export default function Home({ data }) {
   return (
@@ -16,6 +16,7 @@ export default function Home({ data }) {
       <ChoosenMenu />
       <Jumbotron />
       <Article />
+      <Footer />
     </>
   );
 }

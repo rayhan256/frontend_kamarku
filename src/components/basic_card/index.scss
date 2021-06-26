@@ -4,6 +4,10 @@
   .card-body {
     padding: 1em 0;
 
+    .card-title {
+      font-weight: bold;
+    }
+
     .article-link {
       font-size: 15px;
       text-decoration: none !important;
