@@ -1,0 +1,55 @@
+.toggler-wrapper {
+  position: fixed;
+  padding: 20px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  z-index: 5;
+  background-color: #fafafa;
+  transition: 0.5s ease-in-out;
+  transform: translatex(500px);
+  .title {
+    display: flex;
+    flex-direction: row;
+
+    .icon-back {
+      cursor: pointer;
+    }
+
+    h5 {
+      color: #f29913;
+      margin-left: 20px;
+    }
+  }
+
+  &.active {
+    transform: translatex(0);
+  }
+
+  .toggler-item {
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    .toggler-link {
+      font-size: 20px;
+      margin: 10px 0;
+      a {
+        color: black;
+        text-decoration: none;
+        transition: 0.5s ease-in;
+
+        &:hover {
+          color: #f29913;
+        }
+      }
+    }
+  }
+
+  .toggler-footer {
+    position: fixed;
+    bottom: 0;
+    font-size: 13px;
+  }
+}

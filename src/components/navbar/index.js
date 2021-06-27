@@ -2,7 +2,11 @@ import React from "react";
 import Logo from "../../assets/images/logo/logo.svg";
 import { Link } from "react-router-dom";
 import "./index.scss";
+import NavbarToggler from "components/navbar_toggler";
 export default function Navbar() {
+  const navbarToggler = () => {
+    document.querySelector(".toggler-wrapper").classList.add("active");
+  };
   return (
     <>
       <nav className="navbar navbar-light">
@@ -38,12 +42,14 @@ export default function Navbar() {
               aria-controls="navbarToggleExternalContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
+              onClick={navbarToggler}
             >
               <span className="navbar-toggler-icon"></span>
             </button>
           </div>
         </div>
       </nav>
+      <NavbarToggler />
     </>
   );
 }
