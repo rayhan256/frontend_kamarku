@@ -1,14 +1,28 @@
 import React from "react";
+import { createStore } from "redux";
 import ReactDOM from "react-dom";
 import "./assets/scss/bootstrap.scss";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+const globalState = {};
+
+//reducer
+const rootReducer = (state = globalState, action) => {
+  return state;
+};
+
+// store
+const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
