@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Details from "./pages/details";
+import AllCities from "pages/all_cities";
 function App() {
   return (
     <>
@@ -11,6 +12,9 @@ function App() {
           </Route>
           <Route path="/details">
             <Details />
+          </Route>
+          <Route path="/cities">
+            <AllCities />
           </Route>
         </Switch>
       </Router>

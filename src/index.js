@@ -1,5 +1,5 @@
 import React from "react";
-import { createStore } from "redux";
+
 import ReactDOM from "react-dom";
 import "./assets/scss/bootstrap.scss";
 import "slick-carousel/slick/slick.css";
@@ -7,23 +7,14 @@ import "slick-carousel/slick/slick-theme.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-const globalState = {};
-
-//reducer
-const rootReducer = (state = globalState, action) => {
-  return state;
-};
-
-// store
-const store = createStore(rootReducer, composeWithDevTools());
+import store from "state_management/store";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <React.StrictMode>
       <App />
-    </Provider>
-  </React.StrictMode>,
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 

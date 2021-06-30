@@ -1,0 +1,59 @@
+$primary-yellow: #f29913;
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
+
+.input-group {
+  .form-control-icon {
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: $primary-yellow;
+    @include breakpoint(mobileonly) {
+      width: 1.375rem;
+      height: 1.375rem;
+      right: 20px;
+      bottom: 14px;
+    }
+  }
+  .k-search-form {
+    padding-left: 2.375rem;
+    border-color: $primary-yellow;
+    width: 500px;
+    border-radius: 50px !important;
+
+    @include breakpoint(mobileonly) {
+      width: 150px;
+      padding-left: 0.5rem;
+      margin-top: 5px;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+  }
+}

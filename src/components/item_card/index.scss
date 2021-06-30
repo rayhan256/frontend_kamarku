@@ -28,6 +28,7 @@
   width: 260px;
   border-radius: 15px;
   margin-bottom: 10px;
+  cursor: pointer;
   @include breakpoint("mobileonly") {
     width: 93%;
   }

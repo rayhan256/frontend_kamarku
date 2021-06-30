@@ -8,7 +8,7 @@ import Article from "part/home/article";
 import Footer from "components/footer";
 import "./index.scss";
 
-export default function Home({ data }) {
+export default function Home() {
   return (
     <div className="homepages">
       <Navbar />

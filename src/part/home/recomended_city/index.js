@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import CityCard from "components/item_card";
 import SectionTitle from "components/section-title";
 import Slider from "react-slick";
+import { fetchCities } from "state_management/reducer/getCities";
 import Skeleton from "react-loading-skeleton";
-import { getAllCity } from "services/fetch_api";
+import { useSelector, useDispatch } from "react-redux";
 function RecommendedCities() {
-  const [cities, setCities] = useState([]);
-  const [isLoading, setIsloading] = useState(false);
+  const content = useSelector((state) => state.getAllCitiesReducer);
+  const dispatch = useDispatch();
 
   const setting = {
     dots: true,
@@ -27,33 +28,34 @@ function RecommendedCities() {
   };
 
   useEffect(() => {
-    const getCity = async () => {
-      setIsloading(true);
-      const res = await getAllCity();
-      setCities(res.data);
-    };
-    getCity();
-    setIsloading(false);
-  }, [isLoading]);
-  if (isLoading) {
+    dispatch(fetchCities());
+  }, [dispatch]);
+
+  if (content.isLoading) {
     return (
-      <div className="container mb-5">
-        <SectionTitle name="Rekomendasi" subName="Kota" hasLink />
-        <p className="my-1">Rekomendasi kota yang paling sering dikunjungin</p>
-        <div className="recommended-place-wrapper row mt-4">
-          <Skeleton count="5" />
+      <div>
+        <div className="container">
+          <div className="row">
+            <Skeleton count="5" />
+          </div>
         </div>
       </div>
     );
   }
+
   return (
     <>
       <div className="container mb-5">
-        <SectionTitle name="Rekomendasi" subName="Kota" hasLink />
+        <SectionTitle
+          name="Rekomendasi"
+          subName="Kota"
+          hasLink
+          link="/cities"
+        />
         <p className="my-1">Rekomendasi kota yang paling sering dikunjungin</p>
         <div className="recommended-place-wrapper row mt-4">
           <Slider {...setting}>
-            {cities.map((val) => (
+            {content.cities.map((val) => (
               <div className="col-md-3 col-sm-12" key={Math.random()}>
                 <CityCard image={val.image} name={val.name} />
               </div>
